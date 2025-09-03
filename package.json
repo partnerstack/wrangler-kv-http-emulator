@@ -1,0 +1,23 @@
+{
+  "name": "wrangler-kv-http-emulator",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "local": "PORT=8787PERSIST_TO=~/.wrangler-kv-store node ./scripts/start.mjs",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "itty-router": "^5.0.22",
+    "mustache": "^4.2.0",
+    "wrangler": "^4.33.1"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.8.68",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": "22.14.0"
+  }
+}
