@@ -17,16 +17,15 @@ jobs:
           pkg-manager: npm
       - run:
           name: Run unit tests
-          command: npm test -- --run
+          command: npm test
 
   docker_build_and_push:
     docker:
       - image: cimg/base:stable
-    resource_class: medium
     steps:
       - checkout
       - setup_remote_docker:
-          version: 20.10.18
+          docker_layer_caching: true
       - run:
           name: Docker login to Docker Hub
           command: |
@@ -63,5 +62,3 @@ workflows:
               ignore: /.*/
             tags:
               only: /.*/
-
-
