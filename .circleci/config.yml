@@ -52,7 +52,6 @@ workflows:
     jobs:
       - test
   release:
-    when: on_success
     jobs:
       - docker_build_and_push:
           context:
