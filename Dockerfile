@@ -8,11 +8,11 @@ RUN npm install --omit=dev
 
 COPY . .
 
-ENV PORT=8787 \
+ENV PORT=8788 \
     PERSIST_TO=/data/wrangler-kv-store
 
 VOLUME ["/data"]
 
-EXPOSE 8787
+EXPOSE 8788
 
 CMD ["node", "./scripts/start.mjs"]

@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "local": "PORT=8787PERSIST_TO=~/.wrangler-kv-store node ./scripts/start.mjs",
+    "local": "PORT=8788 PERSIST_TO=~/.wrangler-kv-store node ./scripts/start.mjs",
     "test": "vitest"
   },
   "dependencies": {

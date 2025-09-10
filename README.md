@@ -28,13 +28,13 @@ docker build -t wrangler-kv-http-emulator .
 mkdir -p ./kv-data
 
 docker run --rm \
-  -p 8787:8787 \
+  -p 8788:8788 \
   -e NAMESPACES='[{"id":"test-namespace-1","binding":"TEST_KV_1"}]' \
   -v "~/.wrangler-kv-store:/data/wrangler-kv-store" \
   wrangler-kv-http
 ```
 
-- The service listens on `http://localhost:8787`.
+- The service listens on `http://localhost:8788`.
 - Persisted KV data is stored at `/data/wrangler-kv-store` inside the container. Mount that path to keep data between runs and to share state with other local Workers.
 - `NAMESPACES` is required and must be a JSON array of `{ id, binding }` entries.
 
@@ -58,7 +58,7 @@ Notes:
 Base path matches Cloudflare’s REST shape (the `client/v4/accounts/...` prefix is accepted but not validated):
 
 ```
-http://localhost:8787/client/v4/accounts/{account_id}/storage/kv/namespaces/{namespace_id}
+http://localhost:8788/client/v4/accounts/{account_id}/storage/kv/namespaces/{namespace_id}
 ```
 
 Endpoints:
@@ -73,7 +73,7 @@ Endpoints:
 Example usage (bash):
 
 ```bash
-BASE="http://localhost:8787/client/v4/accounts/local/storage/kv/namespaces/test-namespace-1"
+BASE="http://localhost:8788/client/v4/accounts/local/storage/kv/namespaces/test-namespace-1"
 
 # Put a value
 curl -X PUT "$BASE/values/my-key" --data 'hello'
@@ -109,7 +109,7 @@ Run your Workers locally with Wrangler using the same persistence directory and 
 ## Configuration
 
 - **NAMESPACES (required)**: JSON array of objects with shape `{ id: string, binding: string }`.
-- **PORT**: Currently fixed to `8787` and exposed from the container. Map it with `-p 8787:8787`.
+- **PORT**: Currently fixed to `8788` and exposed from the container. Map it with `-p 8788:8788`.
 - **Persistence path**: The container writes to `/data/wrangler-kv-store`. Mount a volume there to persist/share data.
 
 ---

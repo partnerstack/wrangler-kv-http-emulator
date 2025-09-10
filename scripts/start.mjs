@@ -58,7 +58,7 @@ async function main() {
 
     const portEnv = (process.env.PORT ?? '').trim();
     const persistToEnv = (process.env.PERSIST_TO ?? '').trim();
-    const port = portEnv || '8787';
+    const port = portEnv || '8788';
     const persistTo = persistToEnv || './.wrangler-kv-store';
 
     const args = [
