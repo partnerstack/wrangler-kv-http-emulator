@@ -1,0 +1,16 @@
+name = "wrangler-kv-http-emulator"
+main = "src/index.ts"
+compatibility_date = "2024-08-01"
+
+workers_dev = true
+
+kv_namespaces = [
+{{#kv_namespaces}}
+  { binding = "{{binding}}", id = "{{id}}" }{{#comma}},{{/comma}}
+{{/kv_namespaces}}
+]
+
+[vars]
+NAMESPACES = '{{{namespaces_json}}}'
+
+

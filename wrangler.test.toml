@@ -1,0 +1,13 @@
+name = "wrangler-kv-http-emulator-test"
+main = "src/index.ts"
+compatibility_date = "2024-08-01"
+
+workers_dev = true
+
+kv_namespaces = [
+  { binding = "TEST_KV_1", id = "test-namespace-1" },
+  { binding = "TEST_KV_2", id = "test-namespace-2" }
+]
+
+[vars]
+NAMESPACES = '[{"id":"test-namespace-1","binding":"TEST_KV_1"},{"id":"test-namespace-2","binding":"TEST_KV_2"}]'
