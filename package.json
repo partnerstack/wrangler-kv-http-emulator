@@ -14,7 +14,7 @@
     "wrangler": "4.33.1"
   },
   "devDependencies": {
-    "@cloudflare/vitest-pool-workers": "0.8.68",
+    "@cloudflare/vitest-pool-workers": "0.8.71",
     "vitest": "3.2.4"
   },
   "engines": {
